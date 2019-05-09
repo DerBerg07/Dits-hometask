@@ -48,7 +48,7 @@ console.log(calc.history);
 console.log(calc.multiply());
 console.log(calc.history);
 
-
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // 2) создать конструктор Car
 // свойства:
 // - обьем топливного бака
@@ -65,7 +65,7 @@ console.log(calc.history);
 //  выести пробег каждой машины, и сколько топлива осталось
 
 function Car(capasity, spand, colour = "black", mark,
-mileage, dorsCount = 5, ){
+mileage, dorsCount = 5){
 
   this.capasity = capasity;
   this.littersLeft = capasity;
@@ -79,13 +79,32 @@ mileage, dorsCount = 5, ){
     this.littersLeft = this.littersLeft - (this.spand/100 * kilometters);
     if(this.littersLeft < 0){
 
-      console.log("километров пройдено - " + this.mileage + "Закончилось топливо, вы больше не можете проехать столько");
+      console.log("километров пройдено - " + this.mileage +  "     " + "Закончилось топливо, вы больше не можете проехать столько");
 
   }else{
     this.mileage = this.mileage + kilometters;
-  console.log("километров пройдено - " + this.mileage + "топлива осталось - " + this.littersLeft);
+  console.log("километров пройдено - " + this.mileage +  "     "+ "топлива осталось - " + this.littersLeft);
   };
 
   }
 
 }
+
+let car1 = new Car(30, 17, "white", "audi", 0 , 2);
+console.log("Машина 1");
+car1.run(30);
+car1.run(15);
+car1.run(222);
+
+let car2 = new Car(70, 8, "blue", "KAMAZ", 49 , 8)
+console.log("Машина 2");
+car2.run(14);
+car2.run(150);
+car2.run(22);
+
+let car3 = new Car(950, 44, "green", "jigul", 0 , 4)
+console.log("Машина 3");
+car3.run(14);
+car3.run(150);
+car3.run(22);
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
