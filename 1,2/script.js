@@ -3,34 +3,41 @@ function Calculate(first, second){
 
   this.first = first;
   this.second = second;
+  this.history = [];
+  this.historyAdd = function(element){
+    let arr = this.history;
+
+    arr.push(element);
+    this.history = arr;
+  }
   //число 1 + число 2
   this.add = function(){
     let result = this.first + this.second;
-    this.history = this.first + "+" + this.second + "=" + result;
+    this.historyAdd(this.first + "+" + this.second + "=" + result);
     return result;
   };
     //число 1 - число 2
   this.minus = function(){
     let result = this.first - this.secon1d;
-    this.history.push(this.first + "-" + this.second + "=" + result);
+    this.historyAdd(this.first + "-" + this.second + "=" + result);
     return result;
   };
     //число 1 + число 2
   this.multiply = function(){
     let result = this.first * this.second;
-    this.history.push(this.first + "*" + this.second + "=" + result);
+    this.historyAdd(this.first + "*" + this.second + "=" + result);
     return result;
   };
   //число 1 / число 2
   this.segmentation = function(){
     let result = this.first / this.second;
-    this.history.push(this.first + "/" + this.second + "=" + result);
+    this.historyAdd(this.first + "/" + this.second + "=" + result);
     return result;
   };
   //найти сколько % число 1 от числа 2
 this.persent =  function(){
   let result = 100/(this.first / this.second);
-  this.history.push(this.second + "%" + this.first + "=" + result + "%");
+  this.historyAdd(this.second + "%" + this.first + "=" + result + "%")
   return result;
 }
 }
@@ -39,7 +46,7 @@ let calc = new Calculate(720,40);
 
 
 
-console.log(calc.add());
+console.log(calc.persent());
 console.log(calc.history);
 console.log(calc.persent());
 console.log(calc.history);
